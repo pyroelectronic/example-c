@@ -1,8 +1,13 @@
-language: c
-sudo: false # only for faster builds
+sudo: require
+language: cpp
+compiler: gcc
+dist: trusty
+
 script:
-  - clang -coverage -O0 hello.c -o hello
-  - ./hello
+
+    - g++ hello.c -std=c++17 -o travis_gcc_cpp17_cppcheck
+  - ./travis_gcc_cpp17_cppcheck
+  
   - gcov hello.c
 
 after_success:

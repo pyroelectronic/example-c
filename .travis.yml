@@ -1,11 +1,13 @@
 sudo: require
-language: cpp
+language: c
 compiler: gcc
 dist: trusty
 
+
+
 script:
-  - g++ hello.c -o travis_gcc_cpp17_cppcheck
-  - ./travis_gcc_cpp17_cppcheck
+  - gcc -coverage -O0 hello.c -o hello
+  - ./hello
   - gcov hello.c
 
 after_success:

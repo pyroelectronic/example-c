@@ -3,8 +3,6 @@ language: c
 compiler: gcc
 dist: trusty
 
-
-
 script:
   - gcc -coverage -O0 hello.c -o hello
   - ./hello
